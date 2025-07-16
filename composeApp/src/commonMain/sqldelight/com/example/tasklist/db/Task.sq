@@ -1,0 +1,51 @@
+import kotlin.Boolean;
+
+CREATE TABLE Task (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT NOT NULL,
+    description TEXT,
+    dueDate INTEGER,
+    isCompleted INTEGER AS Boolean NOT NULL DEFAULT 0,
+    category TEXT,
+    tags TEXT,
+    createdAt INTEGER NOT NULL,
+    updatedAt INTEGER
+);
+
+getAllTasks:
+SELECT *
+FROM Task;
+
+getIncompleteTasks:
+SELECT *
+FROM Task
+WHERE isCompleted = 0;
+
+getTasksByCategory:
+SELECT *
+FROM Task
+WHERE category = ?;
+
+getTaskById:
+SELECT *
+FROM Task
+WHERE id = ?;
+
+insertTask:
+INSERT INTO Task(title, description, dueDate, isCompleted, category, tags, createdAt, updatedAt)
+VALUES (?, ?, ?, ?, ?, ?, ?, ?);
+
+updateTask:
+UPDATE Task
+SET title = ?,
+    description = ?,
+    dueDate = ?,
+    isCompleted = ?,
+    category = ?,
+    tags = ?,
+    updatedAt = ?
+WHERE id = ?;
+
+deleteTask:
+DELETE FROM Task
+WHERE id = ?;
