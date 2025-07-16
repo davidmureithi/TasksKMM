@@ -15,7 +15,8 @@ This is a Kotlin Multiplatform Mobile (KMM) application that runs on both Androi
 ### Clone the Project
 
 ```bash
-git clone 
+git clone https://github.com/davidmureithi/TasksKMM.git
+git clone git@github.com:davidmureithi/TasksKMM.git
 cd TestKMM
 ```
 
