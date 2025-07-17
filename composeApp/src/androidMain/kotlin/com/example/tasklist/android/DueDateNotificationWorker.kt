@@ -80,7 +80,7 @@ class DueDateNotificationWorker(
         }
 
         fun immediateSchedule(context: Context) {
-            val workRequest = androidx.work.OneTimeWorkRequestBuilder<DueDateNotificationWorker>()
+            val workRequest = OneTimeWorkRequestBuilder<DueDateNotificationWorker>()
                 .build()
             WorkManager.getInstance(context).enqueue(workRequest)
         }
