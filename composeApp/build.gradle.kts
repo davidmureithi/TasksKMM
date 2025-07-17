@@ -72,6 +72,8 @@ kotlin {
                 // Koin Android + Compose
                 implementation("io.insert-koin:koin-android:3.5.3")
                 implementation("io.insert-koin:koin-compose:1.0.1")
+                
+                implementation("androidx.work:work-runtime-ktx:2.9.0")
             }
         }
         
