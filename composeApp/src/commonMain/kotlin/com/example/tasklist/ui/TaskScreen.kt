@@ -74,12 +74,13 @@ fun TaskScreen(
             if (showAddDialog) {
                 AddTaskDialog(
                     onDismiss = { showAddDialog = false },
-                    onTaskAdded = { title, description, category, tags ->
+                    onTaskAdded = { title, description, category, tags, dueDate ->
                         viewModel.onEvent(TaskEvent.AddTask(
                             title = title,
                             description = description,
                             category = category,
-                            tags = tags
+                            tags = tags,
+                            dueDate = dueDate
                         ))
                         showAddDialog = false
                     }

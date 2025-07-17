@@ -250,7 +250,7 @@ fun App() {
                         showAddTaskDialog = false
                         taskToEdit = null
                     },
-                    onTaskAdded = { title, description, category, tags ->
+                    onTaskAdded = { title, description, category, tags, dueDate ->
                         scope.launch {
                             if (taskToEdit != null) {
                                 viewModel.onEvent(TaskEvent.UpdateTask(
@@ -258,7 +258,8 @@ fun App() {
                                         title = title,
                                         description = description,
                                         category = category,
-                                        tags = tags
+                                        tags = tags,
+                                        dueDate = dueDate
                                     )
                                 ))
                             } else {
@@ -266,7 +267,8 @@ fun App() {
                                     title = title,
                                     description = description,
                                     category = category,
-                                    tags = tags
+                                    tags = tags,
+                                    dueDate = dueDate
                                 ))
                             }
                             showAddTaskDialog = false

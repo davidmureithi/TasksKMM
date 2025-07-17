@@ -17,7 +17,8 @@ sealed interface TaskEvent {
         val title: String,
         val description: String? = null,
         val category: String? = null,
-        val tags: List<String> = emptyList()
+        val tags: List<String> = emptyList(),
+        val dueDate: Instant? = null // Added dueDate
     ) : TaskEvent
     data class UpdateTask(val task: Task) : TaskEvent
     data class ToggleTask(val taskId: Long) : TaskEvent

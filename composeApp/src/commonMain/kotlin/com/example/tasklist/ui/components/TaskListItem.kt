@@ -24,6 +24,8 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
+import kotlinx.datetime.TimeZone
+import kotlinx.datetime.toLocalDateTime
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -44,7 +46,6 @@ fun TaskListItem(
         Column(
             modifier = Modifier.padding(16.dp)
         ) {
-            // Header row with checkbox and title
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween,
@@ -75,6 +76,14 @@ fun TaskListItem(
                                 style = MaterialTheme.typography.bodySmall,
                                 color = MaterialTheme.colorScheme.primary
                             )
+                        }
+                        task.dueDate?.let {
+                            Text(
+                                text = "Due: " + it.toLocalDateTime(TimeZone.currentSystemDefault()).date.toString(),
+                                style = MaterialTheme.typography.bodySmall,
+                                color = MaterialTheme.colorScheme.primary
+                            )
+                            Spacer(modifier = Modifier.height(2.dp))
                         }
                     }
                 }

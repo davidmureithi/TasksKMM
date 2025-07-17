@@ -104,7 +104,8 @@ class TaskViewModel(
                             title = event.title,
                             description = event.description,
                             category = event.category,
-                            tags = event.tags
+                            tags = event.tags,
+                            dueDate = event.dueDate // Pass dueDate
                         )
                         loadTasks()
                     } catch (e: Exception) {

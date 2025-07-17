@@ -38,7 +38,7 @@ fun TaskItem(
                 Spacer(modifier = Modifier.width(16.dp))
                 Column {
                     Text(
-                        text = task.title,
+                        text = "task title",
                         style = MaterialTheme.typography.titleMedium
                     )
                     task.description?.let { description ->
